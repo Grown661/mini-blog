@@ -31,8 +31,10 @@ ADMIN_PASSWORD=geheim node server.js   # Standard-Port 8221
 PORT=9000 ADMIN_PASSWORD=geheim node server.js
 ```
 
-Ohne `ADMIN_PASSWORD` gilt das Default-Passwort `admin` (nur für lokales Ausprobieren —
-der Server warnt beim Start).
+`ADMIN_PASSWORD` ist **Pflicht** — ohne gesetzte Variable bricht der Server den Start
+mit einer Fehlermeldung ab (kein Default-Login). Für lokales Testen darf das Passwort
+kurz sein, es muss aber explizit gesetzt werden. Login-Fehlversuche sind pro IP auf
+5 in 15 Minuten begrenzt (danach `429`).
 
 - Blog: `http://localhost:8221/`
 - Admin: `http://localhost:8221/admin`
